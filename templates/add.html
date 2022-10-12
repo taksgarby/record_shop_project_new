@@ -1,0 +1,61 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="content">
+    <div class="form">
+    <form action="/records" method="post">
+        <div class = "form-row">
+            <label for="artist">Artist:</label>
+            <select name="artist_id" id="artist">
+                {% for artist in all_artists  %}
+                <option value="{{ artist.id }}">{{ artist.first_name }} {{ artist.last_name }}</option>
+                {% endfor %}
+
+            </select>
+            <div class="not-found">! Couldn't find the artist?  <a href="/artists/add">Add Artist</a></div>
+        </div> 
+        <div class = "form-row">
+            <label for="description">Title:</label>
+            <input type="text" id="title" name="title" placeholder="Title" required autofocus>
+        </div>
+  
+        <div class = "form-row">
+            <label for="genre">Genre:</label>
+            <select name="genre" id="genre">
+                <option value="">SELECT</option>
+                <option value="Folk">Folk</option>
+                <option value="Jazz">Jazz</option>
+                <option value="Classic">Classical</option>
+                <option value="Pop">Pop & Rock</option>
+                <option value="Pop">Soundtrack</option>
+
+            </select>
+            <!-- <p class="align-right">Couldn't find the genre?<a href="/genre/add">Add Genre</a></p> -->
+        </div>
+        <div class = "form-row">
+            <label for="year">Release Year: </label>
+            <input type="number" name="year" id="year" placeholder="YYYY" min="1930" max="2022"required>
+        </div>
+  
+        <div class = "form-row">
+            <label for="stock_count">Stock Count: </label>
+            <input type="number" name="stock_count" id="stock_count" required>
+        </div>
+        <div class = "form-row">
+            <label for="buying_cost">Buying cost of each record: </label>
+            <input type="number" min="0" value="0" step=".01" name="buying_cost" id="buying_cost" placeholder="£" required>
+        </div>
+        <div class = "form-row">
+            <label for="price">Set price of each record: </label>
+            <input type="number" min="0" value="0" step=".01" name="price" id="price" placeholder="£" required>
+        </div class = "form-row">
+        <button type="submit">Add This Record</button>
+
+        <br>
+
+        <br>
+
+    </form>
+</div>
+</div>
+{% endblock content %}

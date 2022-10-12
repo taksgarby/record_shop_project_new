@@ -1,0 +1,60 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="content">
+    <div class="form">
+<form action="/records/{{ record.id }}" method="post">
+
+        <div class="form-row">
+            <label for="description">Title:</label>
+            <input type="text" id="title" name="title" value="{{ record.title }}">
+        </div>
+        <div class="form-row">
+            <label for="artist">Artist:</label>
+                <select name="artist_id" id="artist">
+                    {% for artist in all_artists  %}
+                    <option value="{{ artist.id }}" {% if artist.id == record.artist.id %} 
+                    selected {% endif %}>{{ artist.first_name }} {{ artist.last_name }}</option>
+                    {% endfor %}
+    
+                </select>
+            </div>   
+            <div class="form-row">
+                <label for="genre">Genre:</label>
+                <select name="genre" id="genre">
+                    <option value="">SELECT</option>
+                    <option value="folk">Folk</option>
+                    <option value="jazz">Jazz</option>
+                    <option value="classic">Classic</option>
+                    <option value="pop">Pop & Rock</option>
+                    <option value="folk">Folk</option>
+                    <option value="jazz">Jazz</option>
+                    <option value="classic">Classical</option>
+                    <option value="soundtrack">Soundtrack</option>
+                </select>
+            </div>
+            <div class="form-row">
+                <label for="year">Release Year: </label>
+                <input type="number" name="year" id="year" value="{{ record.year }}">
+            </div>
+      
+            <div class="form-row">
+                <label for="stock_count">Stock Count: </label>
+                <input type="number" name="stock_count" id="stock_count" value="{{ record.stock_count }}">
+            </div>
+            <div class="form-row">
+                <label for="buying_cost">Buying cost of each record: </label>
+                <input type="number" min="0" value="{{ record.buying_cost }}" step=".01" name="buying_cost" id="buying_cost">
+            </div>            
+            <div class="form-row">
+                <label for="price">Price: </label>
+                <input type="number" min="0" value="{{ record.price }}" step=".01" name="price" id="price">
+            </div class="form-row">
+            
+            <button type="submit">Update This Record</button>
+        </form>
+
+</div>
+</div>
+    
+{% endblock  %}

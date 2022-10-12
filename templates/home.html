@@ -1,0 +1,25 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+
+
+<h1>Hello, Seaside Records!</h1>
+
+<div class="choices">
+    <div class="show-list"><a href="/records">Show List</a></div>
+    <div class = "add-item"><a href="/add">Add Item</a></div>
+
+</div>
+<hr>
+<div class="alert"> 
+{% for record in all_records %}
+
+
+{% if record.stock_count < 3 %} 
+    <a href = "/records/{{ record.id }}"> &#9888; {{ record.title }} </a>is Low Stock !!<br>
+    {% endif %}
+
+    {% endfor %}
+</div>
+{% endblock %}

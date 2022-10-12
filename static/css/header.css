@@ -1,0 +1,41 @@
+body {
+    background-color: rgb(217, 237, 243);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    padding: 0px;
+    margin: 0px;
+
+
+}
+
+.record .stock-count .alert {
+
+  color: red;
+}
+
+nav{
+    background-color: #fcffc1;
+    height: 5rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  nav ul {
+    display: flex;
+  }
+  
+  nav li {
+    align-items: right;
+    font-size: 1.2rem;
+    list-style: none;
+  }
+  
+  nav li a {
+    color: #455d7a;
+    text-decoration: none;
+    padding: 1rem;
+  }
+  
+  nav li a:hover {
+    text-decoration: underline;
+    color: orange;
+  }

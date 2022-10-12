@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="content">
+<div class="artist-list">
+<h3>Click the name to see the artist details
+{% for artist in all_artists %}
+    <h2>
+       <a href="/artists/{{ artist.id }}">&#119070; {{ artist.first_name }} {{ artist.last_name }}</a>
+
+
+
+{% endfor %}
+
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+    <div class="content">
+    <h1>Your List of Records</h1>
+ 
+{% for record in all_records %}
+
+<div class="list">
+    <div class="title">
+        Title: {{record.title}}
+    </div>
+    <div class="artist">
+       Artist: {{record.artist.first_name}} {{ record.artist.last_name }} 
+    </div>
+    <div class="genre">
+        Genre: {{ record.genre }}
+    </div>
+    <div class="stock_count">
+        Stocking: {{ record.stock_count }}
+        {% if record.stock_count < 3 %} <div class="stock-alert">!! Low Stock !!</div>
+        {% endif %}
+    </div>
+    <div class="show">
+        <a href="/records/{{ record.id }}">Show this record</a>
+    </div>
+    
+</div>
+
+{% endfor %}
+</div>
+{% endblock %}

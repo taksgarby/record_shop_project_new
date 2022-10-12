@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/content.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+    <title>Home</title>
+</head>
+<body>
+    <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/records">View Records</a>
+          </li>
+          <li>
+            <a href="/artists">View Artists</a>
+          </li>
+          <li>
+            <a href="/genres">View Genres</a>
+          </li>
+          <li>
+            <a href="/add">Add Item</a>
+          </li>
+
+        </ul>
+      </nav>
+    <section id="content">
+        {% block content %}
+  
+        {% endblock%}
+    </section>
+    <footer class="footer">
+ 
+              <p>Trouble with this website? -> Contact CodeClan<a href="#"> contact@ccwebsite.com</a>
+
+              </p>
+          
+    </footer>
+</body>
+</html>

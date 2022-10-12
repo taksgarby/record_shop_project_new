@@ -1,0 +1,28 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="content">
+<h1>{{ artist.first_name }} {{ artist.last_name }}</h1>
+
+
+<div class="show-details">
+<p>Country: {{ artist.country }}</p>
+
+Stocked records by this artist:
+
+<br>
+<p class= "records-by-artist">
+{% for record in all_records %}
+
+    {% if record.artist.id == artist.id %}
+        {{ record.title }}
+        
+    {% endif %}
+{% endfor %}
+
+</p>
+<p><a href="/artists/{{ artist.id }}/edit">EDIT</a></p>
+
+</div>
+</div>
+{% endblock %}

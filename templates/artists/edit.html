@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="content">
+    <div class="form">
+<form action="/artists/{{ artist.id }}" method="post">
+    <!-- <form action="/records" method="post"> -->
+        <div class="form-row">
+            <label for="first_name">First Name:</label>
+            <input type="text" id="first_name" name="first_name" value="{{ artist.first_name }}">
+        </div>
+        <div class="form-row">
+            <label for="last_name">Second Name:</label>
+            <input type="text" id="last_name" name="last_name" value="{{ artist.last_name }}">
+        </div>
+        <div class="form-row">
+            <label for="country">Country:</label>
+            <input type="text" id="country" name="country" value="{{ artist.country }}">
+        </div>
+            
+            <button type="submit">Update This Record</button>
+        </form>
+
+</div>
+</div>
+    
+{% endblock  %}
