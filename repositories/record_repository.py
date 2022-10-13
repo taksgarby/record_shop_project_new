@@ -35,7 +35,7 @@ def select(id):
     if results:
         result = results[0]
         artist = artist_repository.select(result['artist_id'])
-        genre = genre_repository.select(row['genre_id'])
+        genre = genre_repository.select(result['genre_id'])
         record = Record(result['title'], artist, genre, result['year'],  result['stock_count'], result['buying_cost'], result['price'], result['id'] )
     return record
 

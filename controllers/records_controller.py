@@ -3,6 +3,7 @@ from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 from models.record import Record
 from models.artist import Artist
+from models.genre import Genre
 import repositories.record_repository as record_repository
 import repositories.artist_repository as artist_repository
 import repositories.genre_repository as genre_repository
@@ -45,7 +46,8 @@ def show_record(id):
 def edit_record(id):
     return render_template('records/edit.html',
                             record = record_repository.select(id),
-                            all_artists = artist_repository.select_all())
+                            all_artists = artist_repository.select_all(),
+                            all_genres = genre_repository.select_all())
 
 
 @records_blueprint.route("/records/<id>", methods=['POST'])

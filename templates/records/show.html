@@ -7,7 +7,7 @@
 <h2> <a href="/artists/{{ record.artist.id}}">By {{  record.artist.first_name }} {{ record.artist.last_name }} </a></h2>
 
 <div class="show-details">
-<p>Genre: {{ record.genre }}</p>
+<p>Genre: {{ record.genre.genre_name }}</p>
 <p>Year: {{ record.year }}</p>
 <p>Price: {{ record.price }}</p>
 <p>Buying cost: {{ record.buying_cost }}</p>
