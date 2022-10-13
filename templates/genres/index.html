@@ -2,20 +2,20 @@
 
 {% block content %}
 
-<h3>Click to see the records under each genre</h3>
-
-    
-    
-
-        <h2>&#119070; Jazz</h2>
-        <h2>&#119070; Soundtrack</h2>
-        <h2>&#119070; Pop & Rock</h2>
-        <h2>&#119070; Classical</h2>
-        <h2>&#119070; Folk</h2>
 
 
+<div class="content">
+        <div class="genre-list">
+        <h3>Click to see the records under each genre</h3>
+        {% for genre in all_genres %}
+            <h2>
+               <a href="/genres/{{ genre.id }}">&#119070; {{ genre.genre_name }} </a>
+        
+        
+        
+        {% endfor %}    
+                
 
-
-
-
-{% endblock %}
+        <p class="link-to-form">&#9758; <a href="/genres/add">Crick Here To Create A New Genre</a></p>
+</div>     
+        {% endblock %}

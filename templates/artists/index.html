@@ -6,12 +6,12 @@
 <h3>Click the name to see the artist details
 {% for artist in all_artists %}
     <h2>
-       <a href="/artists/{{ artist.id }}">&#119070; {{ artist.first_name }} {{ artist.last_name }}</a>
+       <a href="/artists/{{ artist.id }}">&#119070; {{ artist.last_name }},  {{ artist.first_name }} </a>
 
 
 
 {% endfor %}
-
+<p class="link-to-form">&#9758; <a href="/artists/add">Crick Here To Add An Artist</a></p>
 </div>
 </div>
 {% endblock %}

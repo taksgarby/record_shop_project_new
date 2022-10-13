@@ -1,0 +1,26 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="content">
+<h1>{{ genre.genre_name }}</h1>
+
+
+<div class="show-details">
+
+Stocked records by this genre:
+
+<br>
+<p class= "records-by-artist">
+{% for record in all_records %}
+
+    {% if record.genre.id == genre.id %}
+    &#119070;  {{ record.title }}<br>
+        
+    {% endif %}
+{% endfor %}
+
+</p>
+
+</div>
+</div>
+{% endblock %}

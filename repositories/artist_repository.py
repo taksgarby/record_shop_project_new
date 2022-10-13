@@ -62,6 +62,6 @@ def records(artist):
     results = run_sql(sql, values)
 
     for row in results:
-        record = Record(row['title'], row['artist_id'], row['genre'], row['year'], row['buying_cost'], row['price'], row['stock_count'], row['id'])
+        record = Record(row['title'], row['artist_id'], row['genre_id'], row['year'], row['buying_cost'], row['price'], row['stock_count'], row['id'])
         records.append(record)
     return records

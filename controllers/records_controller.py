@@ -5,6 +5,7 @@ from models.record import Record
 from models.artist import Artist
 import repositories.record_repository as record_repository
 import repositories.artist_repository as artist_repository
+import repositories.genre_repository as genre_repository
 
 
 records_blueprint= Blueprint("records", __name__)
@@ -22,13 +23,14 @@ def add():
 @records_blueprint.route("/records", methods=['POST'])
 def create_record():
     title = request.form['title']
-    genre = request.form['genre']
+    genre_id = request.form['genre_id']
     year = request.form['year']
     stock_count = request.form['stock_count']
     buying_cost = request.form['buying_cost']
     price = request.form['price']
     artist_id = request.form['artist_id']
     artist = artist_repository.select(artist_id)
+    genre = genre_repository.select(genre_id)
     record = Record(title, artist, genre, year, stock_count, buying_cost, price)
     record_repository.save(record)
     return redirect('/records')
@@ -49,13 +51,14 @@ def edit_record(id):
 @records_blueprint.route("/records/<id>", methods=['POST'])
 def update_record(id):
     title = request.form['title']
-    genre = request.form['genre']
+    genre_id = request.form['genre_id']
     year = request.form['year']
     stock_count = request.form['stock_count']
     buying_cost = request.form['buying_cost']
     price = request.form['price']
     artist_id = request.form['artist_id']
     artist = artist_repository.select(artist_id)
+    genre = genre_repository.select(genre_id)
     record = Record(title, artist, genre, year, stock_count, buying_cost, price, id)
     record_repository.update(record)
     return redirect('/records')

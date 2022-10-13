@@ -14,12 +14,13 @@ def artists():
     artists = artist_repository.select_all()
     return render_template("artists/index.html", all_artists = artists)
 
-
+# create a new artist form
 @artists_blueprint.route("/artists/add", methods= ['GET'])
 def add_artist():
     
     return render_template("artists/add.html")
 
+# create a new artist
 @artists_blueprint.route("/artists", methods=['POST'])
 def create_artist():
     first_name = request.form['first_name']
@@ -30,6 +31,7 @@ def create_artist():
     return redirect('/artists')
 
 
+# show artist details
 @artists_blueprint.route("/artists/<id>", methods=['GET'])
 def show_artist(id):
 
