@@ -21,15 +21,12 @@
   
         <div class = "form-row">
             <label for="genre">Genre:</label>
-            <select name="genre" id="genre">
-                <option value="">SELECT</option>
-                <option value="Folk">Folk</option>
-                <option value="Jazz">Jazz</option>
-                <option value="Classic">Classical</option>
-                <option value="Pop">Pop & Rock</option>
-                <option value="Pop">Soundtrack</option>
 
-            </select>
+            <select name="genre_id" id="genre">
+                {% for genre in all_genres  %}
+                <option value="{{ genre.id }}">{{ genre.genre_name }}</option>
+                {% endfor %}
+            </select>           
             <div class="not-found">! Unable to find an appropriate genre?  <a href="/genres/add">Create Genre</a></div>
         </div>
         <div class = "form-row">

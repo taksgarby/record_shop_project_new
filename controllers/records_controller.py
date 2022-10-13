@@ -18,7 +18,7 @@ def records():
 
 @records_blueprint.route("/add", methods= ['GET'])
 def add():
-    return render_template("add.html", all_artists = artist_repository.select_all())
+    return render_template("add.html", all_artists = artist_repository.select_all(), all_genres = genre_repository.select_all())
 
 
 @records_blueprint.route("/records", methods=['POST'])
