@@ -14,3 +14,6 @@ To run Record Shop Manager, please follow these steps:
 4. cd back into the project directory. LOAD existing data in terminal by: 'python3 console.py'
 5. RUN the app so you can access local host in terminal by: 'flask run'
 6. OPEN host by clicking on '* Running on http://127.0.0.1:7000' use either option/cmd click to open this in a new browser
+
+
+![home](https://user-images.githubusercontent.com/91882718/216091959-ee6a8436-0a6f-4272-a9e5-02308c5ac223.png)
