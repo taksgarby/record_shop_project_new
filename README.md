@@ -9,5 +9,3 @@ To run Record Shop Manager, please follow these steps:
 5. RUN the app so you can access local host in terminal by: 'flask run'
 6. OPEN host by clicking on '* Running on http://127.0.0.1:7000' use either option/cmd click to open this in a new browser
 
-
-![home](https://user-images.githubusercontent.com/91882718/216092521-a6457abb-f652-419e-b25c-c09a34d6638a.png)
