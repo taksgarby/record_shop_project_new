@@ -1,11 +1,5 @@
 This is my first project after joining CodeClan. This project was created using Python, Flask, PostgreSQL and Jinja2. 
 
-
-For the purpose and main functions of the Record Shop Manager, please refer to: 
-https://github.com/taksgarby/record_shop_project_new/blob/main/presentation/record%20shop%20app.pdf
-
-
-
 To run Record Shop Manager, please follow these steps:
 
 1. On terminal, cd into db. Then DROP any existing conflicting db managers in terminal: 'dropdb record_shop_manager'
